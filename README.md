@@ -1,5 +1,7 @@
 # Google ID Token Verifier - Erlang
 
+[![Build Status](https://travis-ci.org/ruel/google-token-erlang.svg?branch=master)](https://travis-ci.org/ruel/google-token-erlang) [![Hex.pm](https://img.shields.io/hexpm/v/google_token.svg)](https://hex.pm/packages/google_token)
+
 An Erlang application that verifies the integrity of Google ID tokens
 in accordance with [Google's criterias](https://developers.google.com/identity/sign-in/web/backend-auth).
 
