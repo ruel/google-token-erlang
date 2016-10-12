@@ -1,0 +1,20 @@
+{application, google_token,
+ [{description, "Google ID token verifier"},
+  {vsn, "1.0.0"},
+  {registered, []},
+  {mod, { google_token_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    ssl,
+    inets
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, ["Ruel Pagayon"]},
+  {licenses, ["MIT"]},
+  {links, [
+    {"Github", "https://github.com/ruel/google-token-erlang"}
+  ]}
+ ]}.
