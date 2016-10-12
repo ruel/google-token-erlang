@@ -103,11 +103,14 @@ code_change(_OldVsn, State, _Extra) ->
 %% @private
 %% @doc Abstracts the JWT validation
 do_verify(IdToken, State) ->
-  case get_kid(IdToken) of
+  try get_kid(IdToken) of
     {kid, KId} ->
       Keys = State#state.keys,
       try_verify(IdToken, KId, State, Keys, false);
     {error, not_found} ->
+      {invalid, malformed_token}
+  catch
+    error:badarg ->
       {invalid, malformed_token}
   end.
 
