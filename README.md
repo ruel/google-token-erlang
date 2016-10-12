@@ -14,7 +14,7 @@ authenicated to [Google Identity Platform](https://developers.google.com/identit
 
 ## Setup
 
-This application can be downloaded as a dependency from [Hex](https://hex.pm/packages/google-token)
+This application can be downloaded as a dependency from [Hex](https://hex.pm/packages/google_token)
 
 ```erlang
 {deps, [
