@@ -110,7 +110,7 @@ do_verify(IdToken, State) ->
     {error, not_found} ->
       {invalid, malformed_token}
   catch
-    error:badarg ->
+    _Error:_Reason ->
       {invalid, malformed_token}
   end.
 
@@ -217,7 +217,7 @@ find_key(KId, [Key | Keys], no_match) ->
     KId ->
       {match, Key};
     MKId ->
-      nomatch
+      no_match
   end,
   find_key(KId, Keys, Res).
         
