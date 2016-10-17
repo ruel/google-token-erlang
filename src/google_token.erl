@@ -139,10 +139,12 @@ try_verify(IdToken, KId, _State, [], false) ->
   try_verify(IdToken, KId, State, Keys, true);
 try_verify(_IdToken, _KId, #state{error = Error}, [], true) ->
   {error, Error};
-try_verify(IdToken, KId, _State, Keys, _Retried) ->
+try_verify(IdToken, KId, State, Keys, Retried) ->
   case find_key(KId, Keys) of
     {key, Key} ->
       validate_jwt(Key, IdToken);
+    _Error when Retried =:= false ->
+      try_verify(IdToken, KId, State, [], false);
     _Error ->
       {invalid, no_verifier} 
   end.
