@@ -15,12 +15,12 @@ start_link() ->
   supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
 init([]) ->
-  {ok, {{one_for_one, 10, 10}, [
+  {ok, {{one_for_one, 1000, 1}, [
     {
       google_token,
       {google_token, start_link, []},
       permanent,
-      brutal_kill,
+      5000,
       worker,
       [google_token]
     }

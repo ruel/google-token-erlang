@@ -18,7 +18,7 @@ This application can be downloaded as a dependency from [Hex](https://hex.pm/pac
 
 ```erlang
 {deps, [
-  {google_token, "1.0.3"}
+  {google_token, "1.0.5"}
 ]}. 
 ```
 

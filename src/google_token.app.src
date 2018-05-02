@@ -1,6 +1,6 @@
 {application, google_token,
  [{description, "Google ID token verifier"},
-  {vsn, "1.0.3"},
+  {vsn, "1.0.5"},
   {registered, []},
   {mod, { google_token_app, []}},
   {applications,
@@ -8,7 +8,8 @@
     stdlib,
     crypto,
     ssl,
-    inets
+    inets,
+    jose
    ]},
   {env,[]},
   {modules, []},
